@@ -21,6 +21,8 @@ that the review turned up.
 > The game's interface is in Spanish, and so are the code identifiers and the
 > Javadoc.
 
+![A game in the terminal: the turn menu and the command centre log](docs/partida.png)
+
 ---
 
 ## Contents

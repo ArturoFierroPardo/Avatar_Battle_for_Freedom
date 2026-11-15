@@ -21,6 +21,8 @@ pruebas y los arreglos de los defectos que salieron al revisarlo.
 > La interfaz del juego está en español, igual que los identificadores del código y el
 > Javadoc.
 
+![Una partida en la terminal: el menú del turno y el registro del centro de mandos](docs/partida.png)
+
 ---
 
 ## Contenido
