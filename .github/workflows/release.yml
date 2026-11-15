@@ -92,7 +92,15 @@ jobs:
           </details>
           NOTAS
 
-          gh release create "$GITHUB_REF_NAME" \
-            target/avatar-battle-for-freedom.jar \
-            --title "Avatar: Battle for Freedom $GITHUB_REF_NAME" \
-            --notes-file notas.md
+          # Si la release ya existe (por ejemplo, al volver a subir la misma
+          # etiqueta) solo se sustituye el jar. Ni el titulo ni las notas se
+          # tocan, por si se han editado a mano desde la web.
+          if gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
+            gh release upload "$GITHUB_REF_NAME" \
+              target/avatar-battle-for-freedom.jar --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" \
+              target/avatar-battle-for-freedom.jar \
+              --title "Avatar: Battle for Freedom $GITHUB_REF_NAME" \
+              --notes-file notas.md
+          fi
